@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .app-name {
+            text-align: center;
+            margin-bottom: 50px;
+            border-radius: 20px 0 20px 0;
+            color: #207246;
+            font-size: 90px;
+        }
+
+        .input-container {
+            display: block;
+            height: 200px;
+            width: 70%;
+            border: 4px solid #171081;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 60px;
+            padding: 30px;           
+            color: rgb(31, 46, 181);
+            font-size: larger;
+            font-weight: bold;
+            text-align: center;
+            background-color: #e7e0e4;
+        }
+        p{
+            color: rgb(31, 46, 181);
+            font-size: larger
+        }
+        
+        .Result-text {
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .action-btn1 {
+            margin-top: 60px;
+            height: 80px;
+            width: 180px;
+            background-color: #b3aeef;
+            border-color: #227a86;
+            border: solid 2px;
+            color: #0f1f5a;
+            font-size: 30px;
+            border-radius: 40px 0 40px 0;
+            font-family: initial
+    
+        }
+        .action-btn2{
+            margin-top: 60px;
+            height: 80px;
+            width: 180px;
+            background-color: #efaeaf;
+            border-color: #880766;
+            border: solid 2px;
+            color: #533803;
+            font-size: 30px;
+            border-radius: 40px 0 40px 0;
+    
+        }
+        .action-btn3{
+            margin-top: 60px;
+            height: 80px;
+            width: 180px;
+            background-color: #c6b0b6;
+            border-color: #d7d8e2;
+            border: solid 2px;
+            color: #154d6c;
+            font-size: 30px;
+            border-radius: 40px 0 40px 0;
+    
+        }
+        .action-btn4 {
+            margin-top: 60px;
+            height: 80px;
+            width: 180px;
+            background-color: #ebcfbf;
+            border-color: #c58c76;
+            border: solid 2px;
+            color: #300120;
+            font-size: 30px;
+            border-radius: 40px 0 40px 0;
+    
+        }
+       
+    </style>
+</head>
+
+<body>
+    <h1 class="app-name">Bold-Ideas</h1>
+     <input type="text" class="input-container" id="input-text">
+   <p class="Result-text" id="resultText"></p>
+
+    <div class="btn-container">
+        <button type="button" class="action-btn1" onclick="ActionResult('UPPERCASE')">
+            UpperCase
+        </button>
+        <button type="button" class="action-btn2" onclick="ActionResult('LowerCase')">
+            LowerCase
+        </button>
+        <button type="button" class="action-btn3" onclick="ActionResult('CharCount')">
+            CharCount
+        </button>
+        <button type="button" class="action-btn4" onclick="ActionResult('WordCount')">
+            WordCount
+        </button>
+    </div>
+
+    <script>
+        function ActionResult(action) {
+            const inputText = document.getElementById("input-text")
+            const resultText = document.getElementById("resultText")
+
+            if (action == 'UPPERCASE') {
+                resultText.innerText = inputText.value.toUpperCase();
+            }
+            else if (action == 'LowerCase') {
+                resultText.innerText = inputText.value.toLowerCase();
+            }
+            else if (action == 'CharCount') {
+                resultText.innerText = (`The Character Count is ${inputText.value.length}`);
+            }
+            else {
+                resultText.innerText = (`The Word Count is ${inputText.value.split(" ").length}`);
+
+            }
+        }
+
+    </script>
+    </body>
+    </html>
